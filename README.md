@@ -30,7 +30,7 @@ pip install -e .
 
 The main configuration is [`configs/emodna.yaml`](configs/emodna.yaml).
 
-The complete release archive includes the source code, checkpoints, and reference **.npy** features. After extracting the archive, run the commands below from the extracted `release/` directory; no additional model or feature decompression step is required. 
+The complete release archive includes the source code, checkpoints, and [reference .npy features](https://github.com/Jiaxin-Ye/Emo-DNA/releases/download/MFCC/reference_features.zip).
 
 For the reproduction of the released results, use the reference .npy features with the provided checkpoint and evaluation setting. But numerical differences may occur because MFCC extraction depends on the audio files, sampling rates, resampling, random seed, and library versions. 
 
