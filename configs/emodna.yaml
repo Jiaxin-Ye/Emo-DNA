@@ -1,0 +1,42 @@
+seed: 0
+task: arousal
+source: CASIA
+target: EMODB
+features_root: reference_features
+input_format: audio
+audio_root: /path/to/SER_WAV_DATA
+audio_sample_rates:
+  IEMOCAP: 48000
+output_dir: outputs
+
+model:
+  input_dim: 40
+  hidden_dim: 64
+  backbone_blocks: 3
+  tcn_blocks: 5
+  kernel_size: 2
+  dropout: 0.1
+  lstm_layers: 2
+
+train:
+  epochs: 150
+  steps_per_epoch: 40
+  batch_size: 64
+  learning_rate: 0.001
+  beta1: 0.93
+  beta2: 0.98
+  num_workers: 4
+  prototype_temperature: 0.01
+  contrastive_temperature: 0.01
+  contrastive_weight: 0.1
+  threshold_momentum: 0.999
+  selection: last
+  target_holdout: 0.1
+
+corpora:
+  CASIA: [angry, fear, happy, neutral, sad, surprise]
+  EMODB: [angry, boredom, disgust, fear, happy, neutral, sad]
+  EMOVO: [angry, disgust, fear, happy, neutral, sad, surprise]
+  IEMOCAP: [angry, happy, neutral, sad]
+  RAVDE: [angry, calm, disgust, fear, happy, neutral, sad, surprise]
+  SAVEE: [angry, disgust, fear, happy, neutral, sad, surprise]

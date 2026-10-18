@@ -1,0 +1,11 @@
+{
+  "corpus": "EMOVO",
+  "feature_shape": [
+    508,
+    40
+  ],
+  "dtype": "float32",
+  "source": "retained MFCC_260 CSV reference",
+  "sample_rate_for_historical_audio": "native WAV rate",
+  "default_training_path": "WAV -> librosa MFCC; these arrays are reference data"
+}
